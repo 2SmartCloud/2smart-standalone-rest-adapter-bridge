@@ -1,0 +1,66 @@
+{
+    "name": "rest-adapter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "chista": "^1.0.0",
+        "connect-multiparty": "^2.2.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-basic-auth": "^1.2.0",
+        "homie-sdk": "github:2SmartCloud/2smart-standalone-homie-sdk",
+        "json-pointer": "^0.6.0",
+        "livr": "^2.3.1",
+        "livr-extra-rules": "^1.2.1",
+        "rename-keys": "^2.0.1",
+        "underscore": "^1.10.2",
+        "uuid-validate": "0.0.3"
+    },
+    "scripts": {
+        "start": "node app",
+        "test:lint": "eslint lib app.js --ext js",
+        "nodemon": "nodemon -L app.js",
+        "test": "jest --runInBand",
+        "test:audit": "npm audit",
+        "test:coverage": "npm run test -- --coverage"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:2SmartCloud/2smart-standalone-rest-adapter-bridge.git"
+    },
+    "author": "2Smart",
+    "devDependencies": {
+        "@babel/plugin-syntax-class-properties": "^7.10.1",
+        "eslint": "^7.1.0",
+        "eslint-config-webbylab": "^5.3.0",
+        "eslint-plugin-fetch": "0.0.1",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jest": "^23.13.2",
+        "eslint-plugin-more": "^0.3.2",
+        "eslint-plugin-no-require-lodash": "^1.1.0",
+        "eslint-plugin-prefer-spread": "^1.0.3",
+        "eslint-plugin-react": "^7.20.0",
+        "eslint-plugin-security": "^1.4.0",
+        "jest": "^24.8.0",
+        "nodemon": "^2.0.4"
+    },
+    "jest": {
+        "verbose": true,
+        "globalTeardown": "./tests/jestGlobalTeardown.js",
+        "globalSetup": "./tests/jestGlobalSetup.js",
+        "collectCoverageFrom": [
+            "**/lib/**/*.js",
+            "!**/lib/controllers/*.js",
+            "!**/lib/*.js",
+            "!**/node_modules/**"
+        ],
+        "testPathIgnorePatterns": [
+            "<rootDir>/test.js"
+        ],
+        "setupFiles": [
+            "<rootDir>/tests/jestSetup.js"
+        ]
+    }
+}

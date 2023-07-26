@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+coverage/
+logs/*
+!logs/.gitkeep
+tests/globalConfig.json
+.idea
+test.js
+temp.js
+.env
